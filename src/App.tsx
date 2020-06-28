@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import ServerList from './components/ServerList';
 import ServerName from './components/ServerName';
 import ChannelInfo from './components/ChannelInfo';
+import ChannelList from './components/ChannelList';
 
 import GlobalStyles from './styles/GlobalStyles';
 
@@ -14,6 +15,7 @@ function App() {
         <ServerList />
         <ServerName />
         <ChannelInfo />
+        <ChannelList />
       </Layout>
 
       <GlobalStyles />
