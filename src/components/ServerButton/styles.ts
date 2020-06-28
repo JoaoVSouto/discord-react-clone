@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from '.';
 
@@ -10,14 +10,36 @@ export const Button = styled.button<Props>`
 
   width: 48px;
   height: 48px;
-
-  &:not(:last-child) {
-    margin-bottom: 8px;
-  }
+  border-radius: 50%;
+  margin-bottom: 8px;
 
   background-color: ${(props) =>
     props.isHome ? 'var(--rocketseat)' : 'var(--primary)'};
 
   cursor: pointer;
   position: relative;
+
+  > img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &::before {
+  }
+
+  &::after {
+  }
+
+  transition: border-radius 0.2s, background-color 0.2s;
+
+  &.active,
+  &:hover,
+  &:focus {
+    border-radius: 16px;
+    ${(props) =>
+      !props.isHome &&
+      css`
+        background-color: var(--discord);
+      `}
+  }
 `;
