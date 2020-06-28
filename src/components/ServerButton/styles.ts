@@ -24,8 +24,22 @@ export const Button = styled.button<Props>`
     height: 24px;
   }
 
-  &::before {
-  }
+  ${(props) =>
+    props.hasNotifications &&
+    css`
+      &::before {
+        width: 9px;
+        height: 9px;
+
+        position: absolute;
+        left: -17px;
+
+        background-color: var(--white);
+        border-radius: 50%;
+
+        content: '';
+      }
+    `}
 
   &::after {
   }
